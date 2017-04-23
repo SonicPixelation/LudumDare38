@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 5555c471fe9fb2945a8a1f01104d227c
-timeCreated: 1492876186
+guid: 32ee8a7cbb551ff428728f12d55118d1
+timeCreated: 1492890169
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: 1Dirt
-    21300002: 3Grass
-    21300004: 2Stone
+    21300000: Doug_Down
+    21300002: Doug_Up
+    21300004: Doug_Right
+    21300006: Doug_Left
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -39,7 +40,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -89,11 +90,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1Dirt
+      name: Doug_Down
       rect:
         serializedVersion: 2
         x: 0
-        y: 480
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -102,24 +103,37 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: 3Grass
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 480
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: 2Stone
+      name: Doug_Up
       rect:
         serializedVersion: 2
         x: 32
-        y: 480
+        y: 97
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Doug_Right
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 97
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Doug_Left
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
         width: 32
         height: 32
       alignment: 0

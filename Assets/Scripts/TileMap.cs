@@ -16,9 +16,14 @@ public class TileMap : MonoBehaviour {
         tiles = new int[(int)(MapSize.x * MapSize.y)];
         data  = new int[(int)(MapSize.x * MapSize.y)];
         tileSprites = Resources.LoadAll<Sprite>(tileSheet.name);
-
-        fill(Tile.floorTile);
-
+        fill(Tile.dirtTile);
+        for(int y = 0; y < MapSize.y; y++){
+            for(int x = 0; x < MapSize.x; x++){
+                if (x == 0 || y == 0 || x >= MapSize.x - 1 || y >= MapSize.y - 1){ 
+                    setTile(x, y, Tile.stoneTile);
+                }
+            }
+        }
         //
         buildMap();
     }
@@ -34,18 +39,14 @@ public class TileMap : MonoBehaviour {
             for(int x = 0; x < MapSize.x; x++){
                 int i = (int)(x + y * MapSize.x);
                 GameObject tile = new GameObject("tile_" + i);
-                tile.transform.position = new Vector3(transform.position.x  + x,transform.position.y + y, transform.position.z);
+                tile.transform.position = new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z);
                 SpriteRenderer sr = tile.AddComponent<SpriteRenderer>();
-                BoxCollider2D bc  = tile.AddComponent<BoxCollider2D>();
+                
+                tile.layer = LayerMask.NameToLayer("blocking_layer");
                 tile.transform.parent = transform;
                 if(getTile(x, y).getId() != 0){
                     sr.sprite = tileSprites[getTile(x, y).getSpriteIndex(0, getData(x, y))];
                     sr.material = tileMat;
-                }
-                if(getTile(x, y).isSolid(x,y)){
-                    bc.isTrigger = false;
-                }else{
-                    bc.isTrigger = true;
                 }
             }
         }

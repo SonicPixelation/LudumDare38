@@ -52,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -70,9 +67,6 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
@@ -81,12 +75,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Cannon_Mob.cs" />
     <Compile Include="Assets\Scripts\Character_Controller.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Moving_Mob.cs" />
+    <Compile Include="Assets\Scripts\Player_Mob.cs" />
+    <Compile Include="Assets\Scripts\Projectile_Mob.cs" />
     <Compile Include="Assets\Scripts\TileMap.cs" />
+    <Compile Include="Assets\Scripts\Tiles\DirtTile.cs" />
     <Compile Include="Assets\Scripts\Tiles\EmptyTile.cs" />
-    <Compile Include="Assets\Scripts\Tiles\FloorTile.cs" />
+    <Compile Include="Assets\Scripts\Tiles\StoneTile.cs" />
     <Compile Include="Assets\Scripts\Tiles\Tile.cs" />
-    <Compile Include="Assets\Scripts\Tiles\WallTile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Ludum_Game_Ideas.txt" />

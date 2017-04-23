@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: c2eed4f929fda5d47a2c52ad6d7de6e3
-timeCreated: 1492828560
+guid: 6005a39318b48214caf2f2d8210ea2bd
+timeCreated: 1492898771
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Doug_Forward
-    21300002: Doug_Backward
+    21300000: Dur_Up
+    21300002: Dur_Right
+    21300004: Dur_Left
+    21300006: Dur_Down
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -61,7 +63,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
@@ -88,11 +90,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Doug_Forward
+      name: Dur_Up
       rect:
         serializedVersion: 2
         x: 0
-        y: 480
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -101,13 +103,39 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Doug_Backward
+      name: Dur_Right
       rect:
         serializedVersion: 2
-        x: 0
-        y: 449
+        x: 32
+        y: 96
         width: 32
-        height: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dur_Left
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dur_Down
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 31
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

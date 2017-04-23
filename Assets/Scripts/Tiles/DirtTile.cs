@@ -3,18 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallTile : Tile{
+public class DirtTile : Tile {
 
-    public WallTile(int id) : base(id){}
+    public DirtTile(int id) : base(id){}
 
-
-
+    //getters
     public override bool isSolid(int x, int y){
-        return true;
+        return false;
     }
 
     public override int getSpriteIndex(int dir, int data){
         //TODO: add varaity
-        return 1;
+        return 0;
     }
 }
