@@ -12,37 +12,24 @@ public class TileMap : MonoBehaviour {
     private int[] data;
 
 
-    private void Start(){
+    private void Awake(){
         tiles = new int[(int)(MapSize.x * MapSize.y)];
         data  = new int[(int)(MapSize.x * MapSize.y)];
         tileSprites = Resources.LoadAll<Sprite>(tileSheet.name);
-        fill(Tile.dirtTile);
-        for(int y = 0; y < MapSize.y; y++){
-            for(int x = 0; x < MapSize.x; x++){
-                if (x == 0 || y == 0 || x >= MapSize.x - 1 || y >= MapSize.y - 1){ 
-                    setTile(x, y, Tile.stoneTile);
-                }
-            }
-        }
-        //
-        buildMap();
+        Debug.Log(tileSprites.Length);
+        //fill(Tile.floorTile);
+        //buildMapObjects();
     }
 
 
-    private void Update(){
-
-    }
-
-
-    private void buildMap(){
+    public void buildMapObjects(){
         for(int y = 0; y < MapSize.y; y++){
             for(int x = 0; x < MapSize.x; x++){
                 int i = (int)(x + y * MapSize.x);
                 GameObject tile = new GameObject("tile_" + i);
                 tile.transform.position = new Vector3(transform.position.x + x, transform.position.y + y, transform.position.z);
                 SpriteRenderer sr = tile.AddComponent<SpriteRenderer>();
-                
-                tile.layer = LayerMask.NameToLayer("blocking_layer");
+
                 tile.transform.parent = transform;
                 if(getTile(x, y).getId() != 0){
                     sr.sprite = tileSprites[getTile(x, y).getSpriteIndex(0, getData(x, y))];
@@ -52,6 +39,21 @@ public class TileMap : MonoBehaviour {
         }
     }
 
+    public void clearMapObjects(){
+        while(transform.childCount > 0){
+            Transform c = transform.GetChild(0);
+            c.SetParent(null);
+            Destroy(c.gameObject);
+        }
+    } 
+
+    public void resize(int width, int height){
+        clearMapObjects();
+        MapSize = new Vector2(width, height);
+        tiles = new int[(int)(MapSize.x * MapSize.y)];
+        data = new int[(int)(MapSize.x * MapSize.y)];
+
+    }
 
     //getters
     public Tile getTile(int x, int y){
@@ -62,6 +64,8 @@ public class TileMap : MonoBehaviour {
         if (x < 0 || y < 0 || x >= MapSize.x || y >= MapSize.y) return 0;
         return data[(int)(x + y * MapSize.x)];
     }
+    public int getWidth()  { return (int)MapSize.x; }
+    public int getHeight() { return (int)MapSize.y; }
     //setters
     public void setTile(int x, int y, Tile tile){
         if (x < 0 || y < 0 || x >= MapSize.x || y >= MapSize.y) return;

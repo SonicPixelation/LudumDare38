@@ -5,9 +5,10 @@ using UnityEngine;
 public abstract class Tile {
 
     public static Tile[] tiles = new Tile[256]; //why 256 you may ask, well...
-    public static Tile emptyTile = new EmptyTile(0);
-    public static Tile dirtTile = new DirtTile(1);
-    public static Tile stoneTile  = new StoneTile(2);
+    public static Tile emptyTile  = new EmptyTile(0);
+    public static Tile floorTile  = new FloorTile(1);
+    public static Tile wallTile   = new WallTile(2);
+    public static Tile finishTile = new Finish_Tile(3);
     //
     private int id;
 
