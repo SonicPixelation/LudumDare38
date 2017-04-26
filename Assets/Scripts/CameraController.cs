@@ -12,7 +12,6 @@ public class CameraController : MonoBehaviour {
     }
 
     private void Update(){
-
         if(target == null){
             target = GameObject.Find("Doug");
         }else{
